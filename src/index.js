@@ -6,16 +6,6 @@ import * as serviceWorker from "./serviceWorker";
 import SignInSide from "./Pages/SignInSide";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
-function Navbar() {
-  return (
-    <div>
-      <Link to="/">Home </Link>
-      <Link to="/about">About Us </Link>
-      <Link to="/shop">Shop Now </Link>
-    </div>
-  );
-}
-
 ReactDOM.render(
   <BrowserRouter>
     <App />

@@ -1,3 +1,7 @@
 <Route exact path="/sign-in">
-  <Login />
+  <SignInSide />
+</Route>;
+
+<Route exact path="/sign-up">
+  <SignUp />
 </Route>;
