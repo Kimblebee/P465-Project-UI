@@ -1,29 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import SignInSide from "./Pages/SignInSide";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import App from "./app";
+import { BrowserRouter as Router } from "react-router-dom";
 
-function Navbar() {
-  return (
-    <div>
-      <Link to="/">Home </Link>
-      <Link to="/about">About Us </Link>
-      <Link to="/shop">Shop Now </Link>
-    </div>
-  );
-}
+import "./index.css";
+import Auth0ProviderWithHistory from "./auth0-provider-with-history";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Router>
+    <Auth0ProviderWithHistory>
+      <App />
+    </Auth0ProviderWithHistory>
+  </Router>,
   document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
