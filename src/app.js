@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { NavBar, Footer, Loading, PrivateRoute } from "./components";
-import { Home, Profile, AboutUs, ContactUs } from "./views";
+import { Home, Profile, AboutUs, ContactUs, ManDashboard } from "./views";
 
 import "./app.css";
 
@@ -24,6 +24,7 @@ const App = () => {
           <PrivateRoute path="/profile" component={Profile} />
           <Route path="/about-us" exact component={AboutUs} />
           <Route path="/contact-us" exact component={ContactUs} />
+          <Route path="/manager/dashboard" exact component={ManDashboard} />
         </Switch>
       </Container>
       <Footer />
