@@ -1,15 +1,15 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import "../App.js";
+import "../index.css"
+
+// const api_key = "d73ffca3a2d08b6870b16763c14c058b"
+
 
 const Hero = () => (
-  <div className="text-center hero my-5">
-    <img className="mb-3 app-logo" src={logo} alt="TicketFaster logo" width="120" />
-    <h1 className="mb-4">Ticket Faster</h1>
-
-    <p className="lead">
-      A one-stop-shop to book tickets for all you favourite movies. 
-    </p>
+  <div className="">
+    
   </div>
+  
 );
 
 export default Hero;

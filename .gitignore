@@ -1,7 +1,16 @@
+<<<<<<< HEAD
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+=======
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
+>>>>>>> a362341758af7f0002ed341904c594e29536a265
 
 # testing
 /coverage
@@ -16,6 +25,13 @@
 .env.test.local
 .env.production.local
 
+<<<<<<< HEAD
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.idea
+=======
 package-lock.json
 
 npm-debug.log*
@@ -26,3 +42,4 @@ yarn-error.log*
 /dist
 # compiled css
 #*.css
+>>>>>>> a362341758af7f0002ed341904c594e29536a265

@@ -1,0 +1,18 @@
+.search{
+    width: 260px;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.375rem 0.75rem;
+    line-height: 1.5;
+    outline: none;
+    color: #495057;
+    background-color: white;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;  
+    transition: 0.4s ease-out; 
+}
+
+.search:focus{
+    box-shadow: 0px 0px 8px 3px #4484C4;
+}

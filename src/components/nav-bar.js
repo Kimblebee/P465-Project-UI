@@ -5,14 +5,18 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from './logout-button';
 import LoginButton from './login-button';
 import SignupButton from './signup-button';
+import "../index.css"
+import SearchBox from "./Search/search-box.js";
 
+
+const url = "http://www.omdbapi.com/?apikey=c906bfc3"
 
 
 const MainNav = () => (
   <Nav className="mr-auto">
     <Nav.Link
       as={RouterNavLink}
-      to="/"
+      to="/home"
       exact
       activeClassName="router-link-exact-active"
     >
@@ -41,7 +45,24 @@ const MainNav = () => (
       activeClassName="router-link-exact-active"
     >
       Contact Us
-    </Nav.Link>   
+    </Nav.Link>
+    <SearchBox placeholder ="Enter movie name..." 
+        handleChange = {
+          (e) => {
+            if (e.key==='Enter'){
+              const newUrl = url +'&s=' + e.target.value
+              fetch(newUrl)
+              .then((res) => res.json())
+              .then((data) =>{
+                const results = data.Search
+                console.log("Data", results)
+              })
+              .catch((error) => {
+                console.log("Error",error)
+              })
+            }    
+        }
+        }/>   
   </Nav>
 );
 
@@ -49,10 +70,10 @@ const AuthNav = () => {
   const { isAuthenticated } =useAuth0();
 
   return (
-    <Nav className='nav navbar-nav navbar-right'>
+    <Nav className='nav navbar-nav navbar-right '>
       {isAuthenticated ? <LogoutButton/> : <LoginButton/>}
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-      <SignupButton/>      
+      {isAuthenticated ? <p> </p>: <SignupButton/>}      
     </Nav>
     
   )
@@ -60,7 +81,7 @@ const AuthNav = () => {
 
 const NavBar = () => {
   return (
-    <Navbar bg="light" expand="md">
+    <Navbar bg="light"  expand="md" >
       <Container>
         <MainNav />
         <AuthNav />
